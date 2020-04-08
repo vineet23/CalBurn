@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CalBurn</string>
+    <string name="bmi">BMI</string>
+    <string name="diet">Diet</string>
+    <string name="calories">Calories</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="exercise">Exercise</string>
+    <string name="communicate">Communicate</string>
+    <string name="share">Share</string>
+    <string name="feedback">Feedback</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_action_bmi"
+            android:id="@+id/nav_bmi"
+            android:title="@string/bmi" />
+        <item
+            android:icon="@drawable/ic_action_diet"
+            android:id="@+id/nav_diet"
+            android:title="@string/diet" />
+        <item
+            android:icon="@drawable/ic_action_cal"
+            android:id="@+id/nav_cal"
+            android:title="@string/calories" />
+        <item
+            android:icon="@drawable/ic_action_weight"
+            android:id="@+id/nav_weight"
+            android:title="@string/weight" />
+        <item
+            android:icon="@drawable/ic_action_height"
+            android:id="@+id/nav_height"
+            android:title="@string/height" />
+        <item
+            android:icon="@drawable/ic_action_exer"
+            android:id="@+id/nav_exercise"
+            android:title="@string/exercise" />
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:icon="@drawable/ic_action_share"
+                android:id="@+id/nav_share"
+                android:title="@string/share" />
+            <item
+                android:icon="@drawable/ic_action_feedback"
+                android:id="@+id/nav_feedback"
+                android:title="@string/feedback" />
+        </menu>
+    </item>
+
+</menu>

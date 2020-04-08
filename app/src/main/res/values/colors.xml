@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7419FE</color>
+    <color name="colorPrimaryDark">#360680</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="textColor">#121111</color>
+    <color name="bmi">#FF9285</color>
+    <color name="diet">#AAC534</color>
+    <color name="cal">#904F37</color>
+    <color name="weight">#7B8084</color>
+    <color name="height">#1C648E</color>
+    <color name="exercise">#66A559</color>
+</resources>
