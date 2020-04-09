@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,11 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton fab;
     NavigationView navigationView;
-    RecyclerView recyclerView;
-    ArrayList<MainMenus> mainMenus = new ArrayList<>();
-    MainAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,36 +42,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        fab = findViewById(R.id.fab);
-
-        mainMenus.add(new MainMenus(getString(R.string.bmi),getDrawable(R.drawable.bmi),getResources().getColor(R.color.bmi)));
-        mainMenus.add(new MainMenus(getString(R.string.diet),getDrawable(R.drawable.food),getResources().getColor(R.color.diet)));
-        mainMenus.add(new MainMenus(getString(R.string.calories),getDrawable(R.drawable.cal),getResources().getColor(R.color.cal)));
-        mainMenus.add(new MainMenus(getString(R.string.weight),getDrawable(R.drawable.weight),getResources().getColor(R.color.weight)));
-        mainMenus.add(new MainMenus(getString(R.string.height),getDrawable(R.drawable.height),getResources().getColor(R.color.height)));
-        mainMenus.add(new MainMenus(getString(R.string.exercise),getDrawable(R.drawable.excer),getResources().getColor(R.color.exercise)));
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),RecyclerView.HORIZONTAL,false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setHasFixedSize(true);
-        adapter = new MainAdapter(mainMenus);
-        recyclerView.setAdapter(adapter);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_bmi){
-
+            startActivity(new Intent(MainActivity.this,BMIActivity.class));
         }else if (id == R.id.nav_diet){
 
         }else if (id == R.id.nav_cal){
 
         }else if (id == R.id.nav_weight){
-
+            startActivity(new Intent(MainActivity.this,WeightActivity.class));
         }else if (id == R.id.nav_height){
-
+            startActivity(new Intent(MainActivity.this,HeightActivity.class));
         }else if (id== R.id.nav_exercise){
 
         }else if (id == R.id.nav_share){
