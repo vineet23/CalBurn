@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_height){
             startActivity(new Intent(MainActivity.this,HeightActivity.class));
         }else if (id== R.id.nav_exercise){
-
+            startActivity(new Intent(MainActivity.this,ExerciseActivity.class));
         }else if (id == R.id.nav_share){
 
         }else{

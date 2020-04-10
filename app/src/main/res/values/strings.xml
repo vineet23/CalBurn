@@ -14,6 +14,21 @@
     <string name="share">Share</string>
     <string name="feedback">Feedback</string>
     <string name="stats">Your current stats</string>
+    <string name="cycle">Cycling</string>
+    <string name="cyclesub">cycling helps to burn calories and a good exercise for legs</string>
+    <string name="run">Running</string>
+    <string name="runsub">running helps to improve stamina and burn calories to great extent</string>
+    <string name="pranayam">Pranayam yoga</string>
+    <string name="pranayamsub">pranayam yoga helps to control mind and body</string>
+    <string name="pullups">Pull Ups</string>
+    <string name="pullupssub">pull ups helps to improve upper body muscles</string>
+    <string name="pushups">Push Ups</string>
+    <string name="pushupssub">push ups helps to maintain the strength of the body</string>
+    <string name="situps">Sit Ups</string>
+    <string name="situpssub">sit ups improve the legs muscles and aim at lower body</string>
+    <string name="skipping">Skipping</string>
+    <string name="skippingsub">skipping improves your stamina and strength</string>
+    <string name="calburned">Calories Burned</string>
 
     <string name="navigation_drawer_open" translatable="false">Open navigation</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation</string>
