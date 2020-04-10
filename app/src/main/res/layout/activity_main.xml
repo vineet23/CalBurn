@@ -203,6 +203,19 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:elevation="16dp"
+            android:src="@drawable/ic_action_food"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView2" />
+
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"

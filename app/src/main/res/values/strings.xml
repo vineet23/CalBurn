@@ -4,6 +4,7 @@
     <string name="bmiHelper">Your BMI calculated from current height and weight</string>
     <string name="diet">Diet</string>
     <string name="calories">Calories</string>
+    <string name="caloriesHelper">Your gained calories depending on the food you ate</string>
     <string name="weight">Weight</string>
     <string name="weightHelper">Your weight in kg\'s</string>
     <string name="height">Height</string>
