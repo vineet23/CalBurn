@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.paper.squeeze.calburn.CustomClass.MainMenus;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_bmi){
             startActivity(new Intent(MainActivity.this,BMIActivity.class));
         }else if (id == R.id.nav_diet){
-
+            startActivity(new Intent(MainActivity.this,DietActivity.class));
         }else if (id == R.id.nav_cal){
             startActivity(new Intent(MainActivity.this,CaloriesActivity.class));
         }else if (id == R.id.nav_weight){
