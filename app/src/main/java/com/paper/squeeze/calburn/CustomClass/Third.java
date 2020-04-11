@@ -1,6 +1,8 @@
 package com.paper.squeeze.calburn.CustomClass;
 
-public class Third {
+import java.io.Serializable;
+
+public class Third implements Serializable {
 
     private String kcal;
     private String name;
@@ -23,4 +25,5 @@ public class Third {
     public String getServing() {
         return serving;
     }
+
 }

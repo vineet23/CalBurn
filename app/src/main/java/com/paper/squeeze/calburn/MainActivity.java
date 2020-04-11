@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //to start activity for results to calculate calories
+                startActivity(new Intent(MainActivity.this,FoodActivity.class));
             }
         });
 

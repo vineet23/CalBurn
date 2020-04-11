@@ -1,4 +1,4 @@
-package com.paper.squeeze.calburn;
+package com.paper.squeeze.calburn.CustomInterface;
 
 import android.widget.TextView;
 

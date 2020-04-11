@@ -1,4 +1,4 @@
-package com.paper.squeeze.calburn;
+package com.paper.squeeze.calburn.CustomAdapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.paper.squeeze.calburn.CustomClass.MainMenus;
+import com.paper.squeeze.calburn.R;
 
 import java.util.ArrayList;
 

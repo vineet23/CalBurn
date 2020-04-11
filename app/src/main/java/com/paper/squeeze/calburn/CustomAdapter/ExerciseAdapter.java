@@ -1,17 +1,17 @@
-package com.paper.squeeze.calburn;
+package com.paper.squeeze.calburn.CustomAdapter;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.paper.squeeze.calburn.CustomClass.Exercise;
+import com.paper.squeeze.calburn.CustomInterface.ExerciseInterface;
+import com.paper.squeeze.calburn.R;
 
 import java.util.ArrayList;
 

@@ -2,12 +2,10 @@ package com.paper.squeeze.calburn;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +14,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.paper.squeeze.calburn.CustomAdapter.ExerciseAdapter;
 import com.paper.squeeze.calburn.CustomClass.Exercise;
+import com.paper.squeeze.calburn.CustomInterface.ExerciseInterface;
 
 import java.util.ArrayList;
 
-public class ExerciseActivity extends AppCompatActivity implements ExerciseInterface{
+public class ExerciseActivity extends AppCompatActivity implements ExerciseInterface {
 
     Toolbar toolbar;
     RecyclerView recyclerView;

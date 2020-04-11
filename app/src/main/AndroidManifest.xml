@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExerciseDetailActivity"></activity>
+        <activity android:name=".FoodDetailActivity"></activity>
+        <activity android:name=".FoodActivity" />
+        <activity android:name=".ExerciseDetailActivity" />
         <activity
             android:name=".ExerciseActivity"
             android:screenOrientation="portrait"
