@@ -13,6 +13,7 @@
     <string name="communicate">Communicate</string>
     <string name="share">Share</string>
     <string name="feedback">Feedback</string>
+    <string name="enterdata">Enter Data</string>
     <string name="stats">Your current stats</string>
     <string name="foodcal">Food Calories</string>
     <string name="cycle">Cycling</string>
@@ -30,6 +31,9 @@
     <string name="skipping">Skipping</string>
     <string name="skippingsub">skipping improves your stamina and strength</string>
     <string name="calburned">Calories Burned</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="login">Please login to continue</string>
 
     <string name="navigation_drawer_open" translatable="false">Open navigation</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation</string>

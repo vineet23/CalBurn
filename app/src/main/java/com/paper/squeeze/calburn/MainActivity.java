@@ -12,9 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     NavigationView navigationView;
     FloatingActionButton fab;
+    TextView weight,height,calories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
+
+        weight = findViewById(R.id.weight_text);
+        height = findViewById(R.id.height_text);
+        calories = findViewById(R.id.cal_text);
+
+        weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
+        height.setText(sharedPreferences.getInt("height",0)+" inch");
+        calories.setText(sharedPreferences.getInt("calories",0)+" cal");
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

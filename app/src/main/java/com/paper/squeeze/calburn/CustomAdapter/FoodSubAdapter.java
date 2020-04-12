@@ -75,7 +75,7 @@ public class FoodSubAdapter extends RecyclerView.Adapter<FoodSubAdapter.MyViewHo
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    foodSubInterface.click(Integer.parseInt(arrayList.get(getAdapterPosition()).getKcal().split(" ")[0]),b);
+                    foodSubInterface.click(Integer.parseInt(arrayList.get(getAdapterPosition()).getKcal().split(" ")[0]) ,b);
                     if (sparseBooleanArray.get(getAdapterPosition(),false)) {
                         sparseBooleanArray.delete(getAdapterPosition());
                         checkBox.setChecked(false);
