@@ -82,7 +82,6 @@ public class FoodDetailActivity extends AppCompatActivity implements FoodSubInte
             @Override
             public void onClick(View view) {
                 //to save the calories changes
-                Toast.makeText(getApplicationContext(),calories+"",Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(FoodDetailActivity.this);
                 builder.setTitle("Wait");
                 builder.setMessage("Updating ...");

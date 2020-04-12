@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">CalBurn</string>
     <string name="bmi">BMI</string>
-    <string name="bmiHelper">Your BMI calculated from current height and weight</string>
+    <string name="bmiHelper">Your BMI calculated from current height and weight. \n \n Healthy BMI range: 18.5 to 25</string>
     <string name="diet">Diet</string>
     <string name="calories">Calories</string>
     <string name="caloriesHelper">Your gained calories depending on the food you ate</string>
     <string name="weight">Weight</string>
     <string name="weightHelper">Your weight in kg\'s</string>
     <string name="height">Height</string>
-    <string name="heightHelper">Your height in inches</string>
+    <string name="heightHelper">Your height in cm\'s</string>
     <string name="exercise">Exercise</string>
     <string name="communicate">Communicate</string>
     <string name="share">Share</string>

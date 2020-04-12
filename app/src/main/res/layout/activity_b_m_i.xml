@@ -95,6 +95,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/bmi_edit"
                     android:layout_width="match_parent"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:enabled="false"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
 

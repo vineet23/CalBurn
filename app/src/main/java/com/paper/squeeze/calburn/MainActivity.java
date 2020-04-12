@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     NavigationView navigationView;
-    FloatingActionButton fab;
+    //FloatingActionButton fab;
     TextView weight,height,calories;
     FirebaseAuth auth;
     SharedPreferences sharedPreferences;
@@ -70,18 +70,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         height = findViewById(R.id.height_text);
         calories = findViewById(R.id.cal_text);
 
-        weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-        height.setText(sharedPreferences.getInt("height",0)+" inch");
+        weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+        height.setText(sharedPreferences.getInt("height",0)+" cm");
         calories.setText(sharedPreferences.getInt("calories",0)+" cal");
 
-        fab = findViewById(R.id.fab);
+        /*fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //to start activity for results to calculate calories
                 startActivityForResult(new Intent(MainActivity.this,FoodActivity.class),601);
             }
-        });
+        });*/
 
     }
 
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_bmi){
             startActivity(new Intent(MainActivity.this,BMIActivity.class));
         }else if (id == R.id.nav_diet){
-            startActivity(new Intent(MainActivity.this,DietActivity.class));
+            startActivityForResult(new Intent(MainActivity.this,FoodActivity.class),601);
         }else if (id == R.id.nav_cal){
             startActivityForResult(new Intent(MainActivity.this,CaloriesActivity.class),201);
         }else if (id == R.id.nav_weight){
@@ -128,24 +128,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode==201){
-            weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-            height.setText(sharedPreferences.getInt("height",0)+" inch");
+            weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+            height.setText(sharedPreferences.getInt("height",0)+" cm");
             calories.setText(sharedPreferences.getInt("calories",0)+" cal");
         }else if (requestCode==301){
-            weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-            height.setText(sharedPreferences.getInt("height",0)+" inch");
+            weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+            height.setText(sharedPreferences.getInt("height",0)+" cm");
             calories.setText(sharedPreferences.getInt("calories",0)+" cal");
         }else if (requestCode==401){
-            weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-            height.setText(sharedPreferences.getInt("height",0)+" inch");
+            weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+            height.setText(sharedPreferences.getInt("height",0)+" cm");
             calories.setText(sharedPreferences.getInt("calories",0)+" cal");
         }else if (requestCode==501){
-            weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-            height.setText(sharedPreferences.getInt("height",0)+" inch");
+            weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+            height.setText(sharedPreferences.getInt("height",0)+" cm");
             calories.setText(sharedPreferences.getInt("calories",0)+" cal");
         }else if (requestCode==601){
-            weight.setText(sharedPreferences.getInt("weight",0)+" Kg");
-            height.setText(sharedPreferences.getInt("height",0)+" inch");
+            weight.setText(sharedPreferences.getInt("weight",0)+" kg");
+            height.setText(sharedPreferences.getInt("height",0)+" cm");
             calories.setText(sharedPreferences.getInt("calories",0)+" cal");
         }
     }
