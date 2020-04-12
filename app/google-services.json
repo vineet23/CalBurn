@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "622383144574",
+    "firebase_url": "https://calburn-e09ea.firebaseio.com",
+    "project_id": "calburn-e09ea",
+    "storage_bucket": "calburn-e09ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622383144574:android:645134eb7b34e0e451c22f",
+        "android_client_info": {
+          "package_name": "com.paper.squeeze.calburn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622383144574-bmt8ct2b850eihed7m4h48ar39tvifvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvsa4WIDigohzmrs5h0b0Of3yJZT24kIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622383144574-bmt8ct2b850eihed7m4h48ar39tvifvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

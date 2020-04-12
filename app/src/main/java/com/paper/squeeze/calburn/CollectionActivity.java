@@ -1,5 +1,7 @@
 package com.paper.squeeze.calburn;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +13,18 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CollectionActivity extends AppCompatActivity {
 
@@ -20,6 +32,9 @@ public class CollectionActivity extends AppCompatActivity {
     AutoCompleteTextView gender;
     FloatingActionButton fab;
     ImageView back;
+    FirebaseFirestore db;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +57,61 @@ public class CollectionActivity extends AppCompatActivity {
                         GENDER);
         gender.setAdapter(adapter);
 
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        db = FirebaseFirestore.getInstance();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (check()){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(CollectionActivity.this);
+                    builder.setTitle("Wait");
+                    builder.setMessage("Updating ...");
+                    builder.setCancelable(false);
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                     //to upload to firebase and save data to local
-                    SharedPreferences sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("gender",gender.getText().toString());
-                    editor.putInt("weight",Integer.parseInt(weight.getText().toString()));
-                    editor.putInt("height",Integer.parseInt(height.getText().toString()));
-                    editor.putInt("age",Integer.parseInt(age.getText().toString()));
-                    editor.putInt("calories",0);
-                    editor.commit();
-                    startActivity(new Intent(CollectionActivity.this,MainActivity.class));
-                    finish();
+                    // Create a new user with a first and last name
+                    Map<String, Object> userObj = new HashMap<>();
+                    userObj.put("id", user.getUid());
+                    userObj.put("name",user.getDisplayName());
+                    userObj.put("email",user.getEmail());
+                    userObj.put("gender",gender.getText().toString());
+                    userObj.put("weight",Integer.parseInt(weight.getText().toString()));
+                    userObj.put("height",Integer.parseInt(height.getText().toString()));
+                    userObj.put("age",Integer.parseInt(age.getText().toString()));
+                    userObj.put("calories",0);
+
+                    db.collection("users")
+                            .add(userObj)
+                            .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentReference> task) {
+                                    if (task.isSuccessful()){
+                                        SharedPreferences sharedPreferences = getSharedPreferences("shared",MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("gender",gender.getText().toString());
+                                        editor.putInt("weight",Integer.parseInt(weight.getText().toString()));
+                                        editor.putInt("height",Integer.parseInt(height.getText().toString()));
+                                        editor.putInt("age",Integer.parseInt(age.getText().toString()));
+                                        editor.putInt("calories",0);
+                                        editor.commit();
+                                        alertDialog.dismiss();
+                                        startActivity(new Intent(CollectionActivity.this,MainActivity.class));
+                                        finish();
+                                    }else{
+                                        Toast.makeText(getApplicationContext(),getString(R.string.error),Toast.LENGTH_SHORT).show();
+                                        alertDialog.dismiss();
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(),getString(R.string.network),Toast.LENGTH_SHORT).show();
+                            alertDialog.dismiss();
+                        }
+                    });
                 }
             }
         });

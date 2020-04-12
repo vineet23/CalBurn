@@ -13,6 +13,7 @@
     <string name="communicate">Communicate</string>
     <string name="share">Share</string>
     <string name="feedback">Feedback</string>
+    <string name="logout">Logout</string>
     <string name="enterdata">Enter Data</string>
     <string name="stats">Your current stats</string>
     <string name="foodcal">Food Calories</string>
@@ -34,7 +35,10 @@
     <string name="age">Age</string>
     <string name="gender">Gender</string>
     <string name="login">Please login to continue</string>
+    <string name="error">Oops! something went wrong, try again</string>
+    <string name="network">Oops! something went wrong, make sure you are connected to internet</string>
 
+    <string name="clientID" translatable="false">622383144574-bmt8ct2b850eihed7m4h48ar39tvifvh.apps.googleusercontent.com</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation</string>
 </resources>

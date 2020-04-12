@@ -28,6 +28,9 @@
             android:icon="@drawable/ic_action_exer"
             android:id="@+id/nav_exercise"
             android:title="@string/exercise" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout"/>
     </group>
 
     <item android:title="@string/communicate">
