@@ -37,6 +37,10 @@
     <string name="login">Please login to continue</string>
     <string name="error">Oops! something went wrong, try again</string>
     <string name="network">Oops! something went wrong, make sure you are connected to internet</string>
+    <string name="feedbacktext">Open and sign in</string>
+    <string name="sharetext">Download the app from the below link to burn and track your calories and much more \n \n</string>
+    <string name="sharetitle">Share app to </string>
+    <string name="sharesubject">Please have a look</string>
 
     <string name="clientID" translatable="false">622383144574-bmt8ct2b850eihed7m4h48ar39tvifvh.apps.googleusercontent.com</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation</string>

@@ -16,11 +16,17 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -107,17 +113,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    auth.signOut();
-                    startActivity(new Intent(MainActivity.this,SplashActivity.class));
-                    finish();
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .requestIdToken(getString(R.string.clientID))
+                            .requestEmail()
+                            .build();
+                    GoogleSignInClient mGoogleSignInClient= GoogleSignIn.getClient(MainActivity.this, gso);
+                    mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                auth.signOut();
+                                startActivity(new Intent(MainActivity.this,SplashActivity.class));
+                                finish();
+                            }
+                        }
+                    });
                 }
             });
             builder.setNegativeButton("No",null);
             builder.show();
         }else if (id == R.id.nav_share){
-
+            String shareBody = "\n https://drive.google.com/open?id=1Tcd3J-et91Q9fJcQG0VogtN-vd6KL2aG \n";
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.sharesubject));
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.sharetext)+shareBody);
+            startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.sharetitle)));
         }else{
             //for feedback
+            //open feedback form
+            String url = "https://www.papersqueeze.com/form/calburn";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            // Always use string resources for UI text. This says something like "Share this photo with"
+            String title = getString(R.string.feedbacktext);
+            // Create and start the chooser
+            Intent chooser = Intent.createChooser(i, title);
+            startActivity(chooser);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
