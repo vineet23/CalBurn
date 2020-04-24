@@ -3,6 +3,7 @@
     <string name="bmi">BMI</string>
     <string name="bmiHelper">Your BMI calculated from current height and weight. \n \n Healthy BMI range: 18.5 to 25</string>
     <string name="diet">Diet</string>
+    <string name="food">Food</string>
     <string name="calories">Calories</string>
     <string name="caloriesHelper">Your gained calories depending on the food you ate</string>
     <string name="weight">Weight</string>
@@ -41,6 +42,7 @@
     <string name="sharetext">Download the app from the below link to burn and track your calories and much more \n \n</string>
     <string name="sharetitle">Share app to </string>
     <string name="sharesubject">Please have a look</string>
+    <string name="dietcreate">Creating a new diet for you....</string>
 
     <string name="clientID" translatable="false">622383144574-bmt8ct2b850eihed7m4h48ar39tvifvh.apps.googleusercontent.com</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation</string>

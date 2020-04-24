@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_bmi){
             startActivity(new Intent(MainActivity.this,BMIActivity.class));
         }else if (id == R.id.nav_diet){
+            startActivityForResult(new Intent(MainActivity.this,DietActivity.class),601);
+        }else if(id == R.id.nav_food){
             startActivityForResult(new Intent(MainActivity.this,FoodActivity.class),601);
         }else if (id == R.id.nav_cal){
             startActivityForResult(new Intent(MainActivity.this,CaloriesActivity.class),201);

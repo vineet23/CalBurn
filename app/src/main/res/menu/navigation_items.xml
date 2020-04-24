@@ -13,6 +13,11 @@
             android:id="@+id/nav_diet"
             android:title="@string/diet" />
         <item
+            android:icon="@drawable/ic_action_food"
+            android:id="@+id/nav_food"
+            android:title="@string/food"
+            />
+        <item
             android:icon="@drawable/ic_action_cal"
             android:id="@+id/nav_cal"
             android:title="@string/calories" />
